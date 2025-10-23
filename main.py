@@ -65,8 +65,7 @@ def ensemble_mots(filename):
     >>> "glycosudrique" in mots
     False
     """
-    
-    return None
+    return set(read_data(filename))
 
 
 def mots_de_n_lettres(mots, n):
@@ -94,8 +93,11 @@ def mots_de_n_lettres(mots, n):
     >>> sorted(list(mots_de_n_lettres(mots,25)))
     ['anticonstitutionnellement', 'oto-rhino-laryngologistes']
     """
-    
-    return None
+    l=set()
+    for chaine in mots:
+        if len(mots)==n:
+            l.add(chaine)
+    return l
 
 
 def mots_avec(mots, s):
@@ -121,8 +123,11 @@ def mots_avec(mots, s):
     >>> sorted(list(mk))[999::122]
     ['képi', 'nickela', 'parkérisiez', 'semi-coke', 'stockais', 'week-end']
     """
-    
-    return None
+    l=set()
+    for chaine in mots:
+        if s in chaine:
+            l.add(chaine)
+    return l
 
 
 def cherche1(mots, start, stop, n):

@@ -33,7 +33,16 @@ def read_data(filename):
     >>> mots[166128]
     'gloire'
     """
-    
+    l=[]
+    with open(filename, mode='r', encoding='utf8') as f:
+        for ligne in f :
+            t=ligne.strip()
+            if ligne == "\n":
+                l.append("")
+            elif t :
+                l.append(t)
+    return l
+        
     return None
 
 
